@@ -4,6 +4,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { adminPaths } from "./admin.routes";
 import { routeGenerator } from "../utils/routesGenerator";
+import { facultyPaths } from "./faculty.routes";
+import { studentPaths } from "./student.routes";
 
 const router = createBrowserRouter([
   {
@@ -18,12 +20,12 @@ const router = createBrowserRouter([
   {
     path: "/faculty",
     element: <App />,
-    children: routeGenerator(adminPaths),
+    children: routeGenerator(facultyPaths),
   },
   {
     path: "/student",
     element: <App />,
-    children: routeGenerator(adminPaths),
+    children: routeGenerator(studentPaths),
   },
   {
     path: "/login",
@@ -36,27 +38,3 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-
-// {
-//   path: '/admin',
-//   element: <App />,
-//   children: adminRoutes,
-// },
-// {
-//   path: '/faculty',
-//   element: <App />,
-//   children: adminRoutes,
-// },
-// {
-//   path: '/student',
-//   element: <App />,
-//   children: adminRoutes,
-// },
-// {
-//   path: '/login',
-//   element: <Login />,
-// },
-// {
-//   path: '/register',
-//   element: <Register />,
-// },
